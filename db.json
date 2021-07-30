@@ -1,0 +1,50 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "Username": "Andy",
+      "FirstName": "Andy",
+      "LastName": "Andy",
+      "Email": "Andy",
+      "BirthDate": "1990-02-10T17:00:00.000Z",
+      "BasicSalary": 3000000,
+      "Status": "Aktif",
+      "Group": "Supervisor",
+      "Description": "Aktif"
+    },
+    {
+      "id": 2,
+      "Username": "Ana",
+      "FirstName": "Ana",
+      "LastName": "Ana",
+      "Email": "ana@mail.com",
+      "BirthDate": "1987-08-17T17:00:00.000Z",
+      "BasicSalary": 5000000,
+      "Status": "Aktif",
+      "Group": "Supervisor",
+      "Description": "Aktif"
+    },
+    {
+      "id": 3,
+      "Username": "Abim",
+      "FirstName": "Abim",
+      "LastName": "Abim",
+      "Email": "abim@mail.com",
+      "BirthDate": "1991-08-24T17:00:00.000Z",
+      "BasicSalary": 4000000,
+      "Status": "Aktif",
+      "Group": "Supervisor",
+      "Description": "Aktif"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

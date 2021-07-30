@@ -1,0 +1,29 @@
+<div class="login-wrapper">
+    <div class="card">
+        <div class="card-body">
+            <form class="form-signin" (ngSubmit)="onSubmit(signInForm)" #signInForm="ngForm">
+                <h1 class="h3 mb-3 fw-normal">Silahkan login terlebih dahulu.</h1>
+            
+                <div class="form-floating">
+                  <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" autofocus required ngModel>
+                  <label for="floatingInput">Masukkan Email</label>
+                </div>
+                <div class="form-floating">
+                  <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" required ngModel>
+                  <label for="floatingPassword">Password</label>
+                </div>
+            
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Log In</button>
+
+                <div class="alert alert-danger" role="alert" *ngIf="isFormInvalid">
+                    Silahkan isi seluruh form !
+                </div>
+
+                <div class="alert alert-danger" role="alert" *ngIf="areCredentialsInvalid">
+                    Email dan Password tidak cocok !
+                </div>
+
+              </form>
+        </div>
+    </div>
+</div>

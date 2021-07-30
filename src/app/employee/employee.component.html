@@ -1,0 +1,97 @@
+
+<button (click)="clickAddPegawai()" type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary" name="btnTambah">Tambah</button>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Username</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
+            <th scope="col">Email</th>
+            <th scope="col">BirthDate</th>
+            <th scope="col">Basic Salary</th>
+            <th scope="col">Status</th>
+            <th scope="col">Group</th>
+            <th scope="col">Description</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of employeeData">
+            <td>{{row.id}}</td>
+            <td>{{row.Username}}</td>
+            <td>{{row.FirstName}}</td>
+            <td>{{row.LastName}}</td>
+            <td>{{row.Email}}</td>
+            <td>{{row.BirthDate | date}}</td>
+            <td>{{row.BasicSalary | number}}</td>
+            <td>{{row.Status}}</td>
+            <td>{{row.Group}}</td>
+            <td>{{row.Description}}</td>
+            <td>
+                <button (click)="editPegawai(row)" type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-warning">Edit</button>
+                <button (click)="hapusPegawai(row)" class="btn btn-danger mx-3">Hapus</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detail Pegawai</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formValue">
+                <div class="form-group">
+                  <label for="Username">Username</label>
+                  <input type="text" class="form-control" id="Username" placeholder="Username" formControlName="Username">
+                </div>
+                <div class="form-group">
+                  <label for="FirstName">Firstname</label>
+                  <input type="text" class="form-control" id="FirstName" placeholder="FirstName" formControlName="FirstName">
+                </div>
+                <div class="form-group">
+                    <label for="LastName">Lastname</label>
+                    <input type="text" class="form-control" id="LastName" placeholder="LastName" formControlName="LastName">
+                </div>
+                <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input type="email" class="form-control" id="Email" placeholder="Email" formControlName="Email">
+                </div>
+                <div class="form-group">
+                    <label for="BirthDate">BirthDate</label>
+                    <input type="text" class="form-control" placeholder="Datepicker" formControlName="BirthDate" bsDatepicker>
+                </div>
+                <div class="form-group">
+                    <label for="BasicSalary">Basic Salary</label>
+                    <input type="number" class="form-control" id="BasicSalary" placeholder="BasicSalary" formControlName="BasicSalary">
+                </div>
+                <div class="form-group">
+                    <label for="Status">Status</label>
+                    <input type="text" class="form-control" id="Status" placeholder="Status" formControlName="Status">
+                </div>
+                <div class="form-group">
+                    <label for="Group">Group</label>
+                    <input type="text" class="form-control" id="Group" placeholder="Group" formControlName="Group">
+                </div>
+                <div class="form-group">
+                    <label for="Description">Description</label>
+                    <input type="text" class="form-control" id="Description" placeholder="Description" formControlName="Description">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" *ngIf="showAdd" class="btn btn-primary" (click)="postEmployeeDetails()">Tambah</button>
+          <button type="button" *ngIf="showUpdate" class="btn btn-primary" (click)="updateEmployeeDetails()">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
